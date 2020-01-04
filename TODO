@@ -1,0 +1,139 @@
+BUGS:
+----
+
+*Ouverts:
+
+
+*Réglés:
+
+Pourquoi lors du premier chargement de la page, les clients / parties adverses se supperposent-ils dans l'affichage des détails du dossier?
+Pourquoi les personnes affichées dans l'agenda ne sont-elles pas les mêmes que dans le planning ?
+Problème avec le cookie "last_post" qui est trop gros.
+Dans data_client.php, vérifier la manière dont on calcule le taux de TVA (fonction "pour avoir sous la main les valeurs du dossier) rajoutée au début en l'état, à titre de workaround)
+Bug avec le groupe "secretariat" calendar.inc.php lignes 592 et 1245, provisoirement réglé par un "if(is_array())". //plus trouvable ni à cette ligne ni à une ligne proche. Doit être un ancien bug réglé en passant.
+Il semble que lorsqu'on modifie une permission individuelle, cela supprime les autres droits. Vérifier. // en tout cas, modifié un bug dans les permissions individuelles qui affectait tout le reste.
+Droits de lecture dans les bases: inexistant si la casse n'est pas la même que celle du nom d'utilisteur ou si l'utilisateur n'a pas de base. // sauf erreur réglé.
+
+
+A FAIRE:
+-------
+*ADRESSE
+
+Prévoir un import de vcard dans les adresses
+Prévoir une coche ou un champ pour les publipostages ("cartes de Noël")
+
+
+*AGENDA
+
+Introduire une vérification des conflits de RDV, plus éventuellement un conflit sur le lieu
+Prévoir un import d'ical dans l'agenda
+Introduire un lien vers Doodle et gérer l'introduction automatique vs manuelle
+
+
+*DOSSIERS
+
+Prévoir l'obligation, lors de l'ouverture d'un dossier, de mentionner s'il y a un délai impératif (LAVI, 180j 336b, ...)
+Prevoir dans le listing de clients (resultat_recherche.php) l'affichage des soldes en cours pour les dossiers.
+Modification du taux de TVA depuis une certaine date.
+Pour les factures et lettres, prévoir une référence automatique cliquable
+
+
+*STATS
+
+Prévoir un graphique avec comparaison avec l'année précédente.
+Idem, mais sous forme de tableau plutôt que de graphique (année1, année2, différence en %)
+Pour l'année précédente dans le module stat, ne faudrait-il pas un double mode ? (mode toute l'année précédente; mode jusqu'à ce jour dans l'année précédente)
+
+
+*SYSTEME
+
+Installateur meilleur?
+Archivage possible des bases terminées
+Méthode doConnectApache
+Améliorer l'écriture (et le nom ?) de etude::setOptionsPerso() (et des autres fonctions au nom semblable ?)
+
+FAITS:
+-----
+
+*ADRESSES
+
+Prévoir des fonctions harmonisées pour les liens cliquables dans adresses/modifier.php et dans inc/prolawyer.class.php pour les fax, courriels et téléphones ainsi que pour le registre du commerce.
+Finir les téléphones pour inclure l'étranger.
+Finir le registre du commerce
+Mettre les mêmes rubriques dans la fiche que dans les détails clients du dossier (pas sûr).
+Mettre un lien cliquable vers la fiche dans les détails clients du dossier.
+
+
+*AGENDA
+
+Prévoir un type "anniversaire" pour les anniversaires, sans groupe.
+Prévoir une catégorie vacances, une salle de conférence, ...
+Pourquoi faut-il cliquer deux fois pour qu'un RDV se valide ?
+Prévoir une détection automatique des locales.
+Prévoir les débuts de délais (au lieu du rappel manuel) indiquant "faire machin (DDL le x)"
+Module de recherche. Prévoir un bouton en fin de formulaire. Prévoir une recherche par date ou plage de date. Prévoir enfin un tri par date des rdv trouvés.
+Prévoir de l'AJAX pour l'agenda, ev. sous la forme d'un mode $this->reload_frame=true qui, dans la fonction $this->form(), rechargerait le cadre par XHR  plutot que de recharger la page.
+Faire en sorte que les personnes déjà sélectionnées soient en haut de liste.
+Copie possible d'un rendez-vous existant
+Groupes dynamiques
+Possibilité d'afficher les RDV supprimés en barré.
+Prévoir que lorsqu'on ouvre l'agenda, on arrive directement au jour actuel.
+Prevoir une vérification de l'agenda (date de debut avant date de fin), en javascript
+Lister les mois en un coup plutôt que jour par jour
+Prévoir une base par défaut (idem pour les op ?). Distinguer cette base clairement de celle des op.
+Les délais qui ont une date d'avertissement ne doivent avertir qu'une fois; cette date ne doit pas être antérieure à aujourd'hui si aujourd'hui est demandé.
+
+*DOSSIERS
+
+Vérifier si les champs d'une fiche adresse correspondent aux champs d'une fiche client. En particulier, le compte bancaire manque.
+Les groupes d'utilisateurs déconnent complètement. Voir la répartition entre groupes et ggroupes. Voir le problème posé par des groupes avec des accents.
+Insérer dans chaque jour au bas de la case les délais du jour.
+Dans resultat_recherche.php, prévoir un tri en cliquant sur les colonnes. Voir s'il n'y a pas eu une bulle dans l'ordre de tri (guillemets manquants ou en trop)
+Prevoir de reacceder au mode de mise a jour (avec une fonction de type $this->from_auto_config) pour modifier les informations de $this->settings[principal]
+Ajouter un module pour la recherche au registre du commerce
+Ajouter dans les options du dossier une case "suivi par " et prevoir un critere de recherche par dossier correspondant
+Ajouter la meme fonctionalite pour le resultat de la recherche dans les adresses que pour les dossiers: aller directement a la seule page trouveee)
+Dans les deux cas, surcharger la variable last_post avant l'instruction header() pour permettre la reconnection dans le bon dossier / la bonne adresse en cas d'expiration de la session. Attention: l'instruction header envoie du GET et non du POST, donc recuperer toutes les variables passees en GET dans l'instruction pour les mettre en POST.
+Dans les deux cas, ne faudrait-il pas prevoir une instruction header() vers resultat_recherche / recherche_adresse si $_POST["nodossier"] / $_POST["noadresse"] est nul ou si la varieble get ne joue pas avec la variable alea ? et enfin, si cela ne joue pas avec alea dans modifier_rdv / modifier_dl, prevoir une instruction javascript self.close();
+Dans le mode recherche_conflits, verifier ce qu'on peut faire une fois qu'on a trouve un conflit. Virer en tout cas la case "accepter" ou "accepter quand meme" tout comme la possibilite de creer une nouvelle fiche.
+Prevoir dans l'affichage du client le moyen de connaitre son solde du pour tous les dossiers du meme client.
+Prévoir une catégorie "dormant" en sus de archivé
+Possibilité de gérer les modèles de facture.
+Vérifier si la liste des soldes du client est OK. Vérifier également son équivalent dans la page de recherche.
+Insertion automatique des délais dans l'agenda lors de l'ouverture de dossiers
+
+*MODULES
+
+Module de paiement des sous-traitants (au pourcentage)
+Prévoir la gestion de modules (les actuels de l'étude ne sont pas dans le CVS
+
+*STATS
+
+Prévoir le bouton pour l'affichage de l'année précédente, ou équivalent, dans le module TVA. 
+
+*SYSTEME
+
+Dans la configuration, verifier les interractions entre isset($this->settings["ajour"] ou equivalent, l'existence de $this->settings["partnerfile"], celle de $this->settings[principal] et les differents test de mise a jour.
+Dans le menu AIDE, insérer un rapport de bug.
+Corriger l'erreur signalee par Sabine (dossier OS 984 p. ex)
+Mis au point dans la fonction testval() quelque chose qui répercute le dernier test fait dans le formulaire de passage à la nouvelle page, de sorte que si le test effectué ne fonctionne pas dans la nouvelle page, on revient à resultat_recherche.php
+Prevoir quelque chose dans les tables pour recuperer les configuration des utilisateurs.
+fonction keepTODO (getLdapGroups): beaucoup trop d'appels à ldap_search. Cela ralentit infiniment le système.
+
+A DÉCIDER ULTÉRIEUREMENT SI L'ON FAIT OU PAS:
+--------------------------------------------
+
+Récupération automatique depuis les fichiers dans les tables des groupes (ne fonctionne pas) et des options de base (non implémenté)
+
+RENONCE:
+-------
+
+*AGENDA
+
+Prévoir une liste "préférée" par personne dans l'agenda ?
+
+
+
+*SYSTEME
+
+Prévoir une meilleure gestion du /tmp, avec effacement automatique. Eventuellement, coder avec le numéro de session tout ce qui est écrit dans tmp

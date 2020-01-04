@@ -1,0 +1,23 @@
+<br>
+    Shab: 2013-08-16 : 1030827<?xml version='1.0' encoding='UTF-8'?>
+    <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+        <S:Body>
+            <ns2:getSHABMessageResponse xmlns:ns2="http://www.e-service.admin.ch/zefix/2015-06-26" xmlns:ns3="http://www.ech.ch/xmlns/eCH-0010/4" xmlns:ns4="http://www.ech.ch/xmlns/eCH-0097/2">
+                <ns2:result>
+                    <ns2:shabMsg>
+                        <ns2:metaInfo>
+                            <ns2:shabDate>2013-08-16</ns2:shabDate><ns2:shabNr>157</ns2:shabNr><ns2:shabPage>0</ns2:shabPage><ns2:shabId>1030827</ns2:shabId><ns2:shabMutationStatus>0</ns2:shabMutationStatus><ns2:registryOfficeId>217</ns2:registryOfficeId><ns2:registryOfficeCanton>FR</ns2:registryOfficeCanton><ns2:registryOfficeJournalId>3810</ns2:registryOfficeJournalId><ns2:registryOfficeJournalDate>2013-08-13</ns2:registryOfficeJournalDate>
+                        </ns2:metaInfo>
+                        <ns2:shabText/>
+                        <ns2:companyInfo>
+                            <ns2:name>Bolomey Baignoires Renovation Ltd, Londres, succursale de Villaz-Saint-Pierre</ns2:name><ns2:chid>CH62690118687</ns2:chid><ns2:ehraid>923006</ns2:ehraid><ns2:uid>114525108</ns2:uid><ns2:legalSeatId>2111</ns2:legalSeatId><ns2:legalSeat>Villaz-Saint-Pierre</ns2:legalSeat><ns2:registerOfficeId>217</ns2:registerOfficeId>
+                            <ns2:legalform>
+                                <ns2:legalFormId>92</ns2:legalFormId><ns2:legalFormUid>0111</ns2:legalFormUid><ns2:legalFormName xml:lang="de">Ausländische Zweigniederlassung</ns2:legalFormName><ns2:legalFormName xml:lang="fr">Succursale étrangère</ns2:legalFormName><ns2:legalFormName xml:lang="it">Succursale straniera</ns2:legalFormName><ns2:legalFormName xml:lang="en">Foreign branch</ns2:legalFormName>
+                            </ns2:legalform>
+                            <ns2:status>active</ns2:status>
+                        </ns2:companyInfo>
+                    </ns2:shabMsg>
+                </ns2:result>
+            </ns2:getSHABMessageResponse>
+        </S:Body>
+    </S:Envelope>

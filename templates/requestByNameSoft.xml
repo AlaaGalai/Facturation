@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.e-service.admin.ch/zefix/2010-12-06">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:searchByNameRequest>
+         <ns:name>soft</ns:name>
+         <ns:legalFormId>3</ns:legalFormId>
+         <ns:registerOfficeId>36</ns:registerOfficeId>
+         <ns:active>true</ns:active>
+         <ns:maxSize>2</ns:maxSize>
+      </ns:searchByNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

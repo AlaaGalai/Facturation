@@ -1,0 +1,2 @@
+body {border-style:groove;border-width:3px;border-color:red}
+body::before{content:'TEST ONLY - BUT REAL DATAS';width:100%;text-align:center;float:right;color:red}

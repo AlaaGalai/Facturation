@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Prolawyer" script:language="StarBasic">REM  *****  BASIC  *****
+
+sub ForceSave
+Dim oDoc As Object
+Dim oSFA As Object
+Dim Fichier As String, urlFichier As String 
+
+Fichier = &quot;PLACEHOLDERTOREPLACE&quot;
+if Fichier = &quot;PLACEHOLDERTOREPLACE&quot; Then &apos;Si la macro n&apos;a pas ete modifiée, on n&apos;exécute pas le script
+	exit Sub
+end if
+
+oDoc = thisComponent
+oSFA = createUnoService( &quot;com.sun.star.ucb.SimpleFileAccess&quot; )  
+
+if oDoc.hasLocation then &apos;pas de sauvegarde si le document vient de quelque part de connu
+	exit Sub
+end if
+ 
+  
+  
+urlFichier = ConvertToURL( Fichier )  
+If oSFA.exists( urlFichier ) then &apos;pas de sauvegarde si le fichier existe déjà
+	exit sub 
+else
+	&apos;MsgBox ( &quot;Le fichier &quot; &amp; urlFichier &amp; &quot;n&apos;existe pas.&quot;)
+	dim exportData(1) as new com.sun.star.beans.PropertyValue
+	exportData(0).name = &quot;Overwrite&quot;
+	exportData(0).value = false
+	If MsgBox ( &quot;Le fichier va être enregistré sous &quot; &amp; Fichier &amp; &quot;&quot;, 321) = 1 Then
+		newUrl = oDoc.storeAsUrl(urlFichier, exportData)
+	end if
+end if
+end sub	
+
+</script:module>

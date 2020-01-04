@@ -1,0 +1,31 @@
+<div style='margin-left:auto;margin-right:auto;width:30%;align-self:center;align-content:center;padding:5px;background-color:#d0d0d0;border-style:solid;border-width:1px;margin-top:10%;'><br><br><style>img{border-bottom-style:solid;border-bottom-width:2px;padding-bottom:2px;border-bottom-color:#d0d0d0} button{background-color:#d0d0d0}</style>
+<div style=';margin-left:0px;margin-right:auto;width:10vw;margin-top:0%;vertical-align:bottom;border-style:none;border-width:1px;border-color:#0000ff;display:inline-block'><select style="background-image:url(.//images/lang/fr.png);background-color:#d0d0d0" id=selectLanguage class="sellang "><option  class="sellang " onclick="document.getElementById('selectLanguage').style.backgroundImage='url(.//images/lang/de.png)'" style="background-image:url(.//images/lang/de.png);background-color:#d0d0d0">de</option><option  class="sellang " onclick="document.getElementById('selectLanguage').style.backgroundImage='url(.//images/lang/en.png)'" style="background-image:url(.//images/lang/en.png);background-color:#d0d0d0">en</option><option  class="sellang " onclick="document.getElementById('selectLanguage').style.backgroundImage='url(.//images/lang/es.png)'" style="background-image:url(.//images/lang/es.png);background-color:#d0d0d0">es</option><option selected class="sellang " onclick="document.getElementById('selectLanguage').style.backgroundImage='url(.//images/lang/fr.png)'" style="background-image:url(.//images/lang/fr.png);background-color:#d0d0d0">fr</option><option  class="sellang " onclick="document.getElementById('selectLanguage').style.backgroundImage='url(.//images/lang/it.png)'" style="background-image:url(.//images/lang/it.png);background-color:#d0d0d0">it</option></select>
+</div>
+<div style='margin-left:auto;margin-right:auto;text-align:center;margin-top:0%;vertical-align:bottom;border-style:none;border-width:1px;border-color:#0000ff;display:inline-block'>
+<a href="./index.php?pda=on"><img class='img' src='images/pda.png'  style=''></a>&nbsp;
+<a href="./index.php?pda=normal"><img class='img' src='images/normal.png'  style='border-bottom-color:#ff0000;'></a>&nbsp;
+</div>
+<div style='float:right;width:10vwx;text-align:right;margin-top:0%;vertical-align:bottom;border-style:none;border-width:1px;border-color:#0000ff;display:inline-block'>
+<a href="./config/config.php"><img class='img' src='images/locked.png' style=''></a>
+</div>
+<br><h1><img style='height:1em;width:1em;border-style:none;vertical-align:bottom' src='images/prolawyer_logo2.png'>&nbsp;Prolawyer 4.2.0-2</h1>
+<br>
+{{JAVASCRIPT}}
+<br>
+<form  id="main_form" name="form" method="post" action="submition()" onSubmit="return submition()">
+<mtable><mtr>
+			<label for='start_utilisateur' style='display:table-cell;vertical-align:bottom;width:50%;'>Nom :</label><input style='display:table-cell;vertical-align:bottom;width:50%;' type="text" name="start_utilisateur" onfocus="select()" ><br>
+</mtr><mtr>
+			<label for='start_pwd' style='display:table-cell;width:50%;'>Mot de passe :</label><input style='display:table-cell;width:50%;' type="password" name="start_pwd" onfocus="select()" ><br>
+</mtr></mtable><br><br>
+<select name="next" id="next" >
+<option value="formulaire_0">Rechercher&nbsp;un&nbsp;dossier</option>
+<option value="formulaire_1">Liste&nbsp;d'adresses</option>
+<option value="formulaire_2">Agenda</option>
+<option value="formulaire_3">Planning&nbsp;des&nbsp;vacances</option>
+</select><input type="hidden" id="new_check" name="new_check" value="on">
+<br><button  type="submit"  >Se connecter</button>
+</form>
+
+{{HIDDENFORMS}}
+</div>

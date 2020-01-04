@@ -1,0 +1,31 @@
+tx simple = appliquer dès que on change d'année d'encaissement
+tx variable = appliquer dès qu'on change d'année d'opération
+
+T0 = 0
+T1 = 7.6 de X1 à Y1
+T2 = 8 de X2 à Y2
+t1 = 6 => T1
+t2 = 5.8 => T2 (y1a:y1b)
+t3 = 6.1 => T2 (y2a:y2b)
+
+tx simple = txt TVA
+tx variable = tx lié
+
+tx TVA lié à la date d'opération et introduit dans le programme.
+
+tx forfaitaire lié au tx de TVA de base.
+
+Facture: select from op where dateop (X1:Y1) * T1
+	 select from op where dateop (X2:Y2) * T2
+
+TVA:     select from ac where dateac (x
+
+
+
+Si 1 T par dossier, avec dossiers liés:
+
+Facture:
+foreach(dossierLie) select * from op * T
+
+TVA: foreach T: foreach t de T: select encaissement * t where datet correspond.
+select encaissement *T group by TDossier

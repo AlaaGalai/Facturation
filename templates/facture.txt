@@ -1,0 +1,35 @@
+					val_titre
+					val_nom
+					val_fonction
+					val_adresse
+					val_cp
+					val_ville
+					val_pays
+
+Lieu, date
+
+Note d'honoraires et de débours
+
+
+val_naturemandat
+
+
+Détail des opérations selon décompte joint en annexe
+
+Honoraires dus à ce jour pour l'ensemble du dossier	Fr.	val_hono_theorique
+
+Avance de frais, débours				Fr.	val_avances
+
+TVA (7.6%)						Fr.	val_tva
+
+Honoraires ou acomptes déjà réglés			Fr.	val_rentrees
+	
+Solde à régler						Fr.	val_total
+
+
+Je vous remercie de la confiance témoignée
+
+NB : la présente facture, payable à trente jours, récapitule toute facture antérieure.
+ 
+
+Annexes : ment. + un bulletin de versement

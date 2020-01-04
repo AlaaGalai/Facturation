@@ -1,0 +1,17 @@
+def_acces_system.sql //contient la liste des accès, leurs droits et leurs options
+def_accesgroupes_system.sql //contient la liste des groupes d'accès
+def_accesgroupesmembres_system.sql //contient la liste des membres des groupes d'accès
+def_adresses_system.sql //contient les adresses
+def_biblio_system.sql //contient de quoi gérer la bibliothèque
+def_clients_partner.sql //contient la définition des tables clients pour les définitions de dossiers
+def_comptes_system.sql //contient le plan comptable
+def_delais_system.sql //contient les délais
+def_droits_system.sql //contient la liste des droits des accès ou groupe d'accès sur les utilisateurs ou groupe d'utilisateurs
+def_op_partner.sql //contient la défintion des tables clients pour les opérations enregistrées
+def_operations_system.sql // contient les opérations comptables
+def_passwords_system.sql //contient les mots de passe enregistrés dans prolawyer et non dans IMAP
+def_rdv_system.sql //contient les rendez-vous
+def_tarifs_partner.sql //contient les tarifs différenciés par dossier et par collaborateur
+def_utilisateurs_system.sql //contient la liste des utilisateurs et les options de leur base
+def_utilisateursgroupes_system.sql // contient la liste des groupes d'utilisateurs
+def_utilisateursgroupesmembres_system.sql //contient la liste des membres des groupes d'utilisateurs

@@ -1,0 +1,128 @@
+.accesskey{background-color:#a0a0a0}
+.accyes{border-style:solid;border-width:1px;border-color:#000000}
+.accno{border-style:none}
+.administration{background-color:#E7E7E7;color:brown;border-color:#d0d0ff;font-size:12px}
+.affdl{margin:0;padding:1pt;height:18pt}
+.alerte{color:#ff4000}
+.attention_bg{background-color:#ff0000}
+.inserted_bg{background-color:#40ff40}
+.attention{color:#ff0000}
+.attentionmenu{background-color:#E7E7E7;color:#ff0000;border-color:#d0d0ff;font-size:12px}
+.attentionmild{color:#ff8000}
+.attentionok{color:#0000ff}
+.aut{background-color:#eec2a0;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-bottom-style:solid;border-right-width:1px;border-bottom-width:1px;}
+.autresdonnees{background-color:#ffff80;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-bottom-style:solid;border-right-width:1px;border-bottom-width:1px;}
+.borduretest{border-width:1px;margin:0;border-style:solid;border-color:#ff0000;cursor:pointer;background-color:#ffffff}
+.bordurefirst{background-color:#a0a0a0;background: url(gradient-bw.png) repeat-x;margin:0;border-width:0;border-style:solid;color:#000000;cursor:pointer;font-size:12px}
+.bordure{background-color:#a0a0a0;margin:0;border-width:0;border-color:#0000ff;border-style:solid;color:#000000;cursor:pointer;font-size:12px}
+.bg{background-color:#ffffff}
+/*.button{font-family:arial;margin:0;vertical-align:bottom;color:#0000ff;background-color:#ffffff;border-width:0;border-color:#ffffff;text-align:left;cursor:pointer;padding:0;padding-left:0}*/
+.button{font-family:arial;margin:0;vertical-align:bottom;color:#0000ff;background-color:#ffffff;border-width:0;border-color:#ffffff;text-align:left;cursor:pointer;padding:0;padding-left:0}
+/*.buttonattention{font-family:arial;margin:0;vertical-align:bottom;color:#ff0000;background-color:#ffffff;border-width:0;border-color:#ffffff;text-align:left;cursor:pointer;padding:0;padding-left:0}*/
+.buttonattention{font-family:arial;margin:0;vertical-align:bottom;color:#ff0000;background-color:#ffffff;border-width:0;border-color:#ffffff;text-align:left;cursor:pointer;padding:0;padding-left:0}
+.buttonattention:hover{text-decoration:underline}
+.cbutton{background-color:#d0d0d0;color:black;font-weight:normal;text-decoration:none;padding-left:3px;padding-right:3px;border:2px outset black}
+.ca{background-color:#ffe8e8}
+.client{background-color:#d0d0ff;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-bottom-style:solid;border-right-width:1px;border-bottom-width:1px;}
+.contact{background-color:#c0c0ff}
+.def_semaine{background-color:#ffffff;border-width:0;padding:0;margin:0}
+.delaitexte{background-color:#ffffff;color:#000000;cursor:pointer}
+.delai_seul{background-color:#c0c0ff;border-width:1px;border-color:#000000;border-style:solid}
+.dormant{background-color:#ff8080}
+.dujourtexte{background-color:#e0e0ff;color:#000000;cursor:pointer}
+.dujourvacances{background-color:#e0e0ff;color:#ff4000;cursor:pointer}
+.dujour{background-color:#e0e0ff;height:75px;color:#00ff00}
+.duplicate{color:#404040;font-size:8pt}
+.enattente_bg{background-color:#ff8080}
+.enmoistexte{background-color:#c0c0ff;color:#000000;cursor:pointer}
+.enmoisvacances{background-color:#c0c0ff;color:#ff4000;cursor:pointer}
+.enmois{background-color:#c0c0ff;height:75px;color:#000000}
+.entete-attention{background-color:#c0c0ff;border-color:#c0c0ff;color:#ff0000}
+.entete{background-color:#c0c0ff;border-color:#c0c0ff}
+.help{color:#00a000;background-color:#d0d0ff;border-color:#d0d0ff}
+.horsmoistexte{background-color:#ebdde2;color:#000000;cursor:pointer}
+.horsmoisvacances{background-color:#ebdde2;color:#ff4000;cursor:pointer}
+.horsmois{background-color:#ebdde2;height:75px;color:#00ff00}
+.img{height:6vw}
+.invisible{visibility:hidden;position:absolute;max-width:0px;width:0px;max-height:0px;height:0px}
+.ligne1{background-color:#ffa0a0}
+.ligne2{background-color:#60ff60}
+.lignejour1{background-color:#f0f0f0;margin:0;padding:1px;height:18px}
+.lignejour2{background-color:#e0e0e0;margin:0;padding:1px;height:18px}
+.lignejour3{background-color:#c0c0c0;margin:0;padding:1px;height:18px}
+.ligneplan0{background-color:#909090;margin:0;padding:1px}
+.ligneplan1{background-color:#f0f0f0;margin:0;padding:1px}
+.ligneplan2{background-color:#e0e0e0;margin:0;padding:1px}
+.ligneplan3{background-color:#404040;margin:0;padding:1px;height:1px;font-size:1px}
+.mailbox{color:#4040ff}
+/* .menu{background-color:#e0e0e0;margin:0;border-width:0;border-color:#ffffff;color:#000000;cursor:pointer} */
+/* .menu{background-color:#c0c0c0;margin:0;border-width:0;border-color:#ffffff;color:#000000;cursor:pointer;font-size:12px} */
+.maj{color:#008800}
+.nomaj{color:#880000}
+.majref{}
+.menuinit{background-color:#E7E7E7;background: url(gradient.png) repeat-x;margin:0;border-width:0;border-color:#ffffff;color:#000000;cursor:pointer;font-size:12px}
+.menu{background-color:#E7E7E7;margin:0;border-width:0;border-color:#ffffff;color:#000000;cursor:pointer;font-size:12px}
+.messageline{padding:0;background-color:#ffffff;cursor:pointer;border-style:none}
+.niet{color:#ffffff;background-color:#ffffff}
+.nomjourmois{color:#000000;background-color:#ffffff}
+.noselect{padding:0;background-color:#ffffff;cursor:pointer}
+.noselect_bold{padding:0;cursor:pointer;color:#800000}
+.not_valid{color:#ffc0c0}
+.null{height:0px;width:0px;background-color:#c0c0ff;border-width:0}
+.ok{color:#00ff00}
+.onglet{cursor:pointer;border-radius: 15px 15px 0px 0px;border-style:solid;border-bottom-style:none !important;border-width:1px;border-color:#000000}
+.onglet2{cursor:pointer;width:20%;display:inline-block;margin:0px;padding:0px;text-align:center}
+.pa{background-color:#ffd0d0;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-bottom-style:solid;border-right-width:1px;border-bottom-width:1px;}
+.pj{background-color:#e8e8ff}
+.popup_static{position:absolute}
+.popupguy{position:absolute;visibility:hidden;background-color:#ffffff;border-width:0;border-color:#ffffff;border-top-style:solid;border-top-width:1px}
+.popupguyshow{position:relative;visibility:visible;background-color:#ffffff;border-width:0;border-color:#ffffff}
+.popupitem{position:absolute;visibility:hidden;border-width:0;background-color:#E7E7E7;border-color:#ffffff;z-index:10}
+.popupsubitem{position:absolute;visibility:hidden;color:#000000;}
+.popup{position:absolute;background-color:yellow;max-width:96%;margin-right:40px;overflow:hidden}
+.select{background-color:#c0c0c0;padding:0;cursor:pointer}
+.select_bold{background-color:#c0c0c0;padding:0;cursor:pointer;color:#800000}
+.selected_bg{background-color:#a0a0c0}
+.selected_op{background-color:#a0a0c0;font-size:10px}
+.sellang, input.sellang{background-repeat:no-repeat;background-position:0em;padding-left:1.5em;background-size:1.3em 0.9em;}
+select.sellang{-webkit-appearance: none;-moz-appearance: none;appearance: none}
+.semaine_select{background-color:#ff0000;border-width:1px;padding:0;margin:0}
+.semaine{background-color:#ffffff;border-width:1px;padding:0;margin:0}
+.semainehorsmois{background-color:#ffffff;color:#a0a0a0;border-width:1px;padding:0;margin:0}
+.semaine_entete{background-color:#e0e0e0;border-width:0;padding:0;margin:0}
+.substyle{visibility:hidden;background-color:#ffffff;border-right:none;width:0px;display:block;width:0px;height:0px}
+.special_border{border-bottom-width:0;border-left-width:1px;border-left-color:#d0d0d0;border-left-style:solid;border-right-width:0}
+.submenu{background-color:#E7E7E7;margin:0;border-width:0;border-color:#ffffff;color:#000000;cursor:pointer;font-size:12px;white-space:nowrap;position:absolute}
+.tablemenu{width:100%;border:none;padding:0px;border-spacing:0px}
+.textbl{font-size:16px;font-family:arial}
+.today{background-color:#ffe0e0;border-width:1px;border-color:#ff0000;padding:0;margin:0}
+.splitdate{background-color:#ffffff}
+.agendasize, .affdl, .delaitexte, .delai_seul, .dujourtexte, .dujourvacances, .dujour, .enmoistexte, .enmoisvacances, .enmois, .horsmoistexte, .horsmoisvacances, .horsmois, .enattente_bg, .inserted_bg, .lignejour1, .lignejour2, .lignejour3, .mailbox, .messageline, .nomjourmois, .noselect, .noselect_bold, .select, .select_bold, .selected_op, .semaine_select, .semaine, .semainehorsmois, .semaine_entete, .today{font-size: 10px}
+a:hover{text-decoration:underline}
+a{text-decoration:none;color:#0000ff}
+/*body{background-color:#ffefef}*/
+/* body{min-height:95%;border-width:1px;border-color:#ff0000;border-style:solid;color:#000000;height:100%} */
+html{height:98%}
+body textarea{font-family:arial;/*background-color:#00ffff*/}
+/* body{background-color:#ffffff;} */
+body:-webkit-full-screen  {width: 100%;height: 100%;background-color:#ffffff;}
+body:-moz-full-screen  {width: 100%;height: 100%;background-color:#ffffff;}
+button{font-family:arial;margin:0;vertical-align:baseline;color:#0000ff;background-color:#ffffff;border-width:0;border-color:#ffffff;text-align:left;cursor:pointer;padding:0;padding-left:0}
+button:hover{text-decoration:underline}
+del{text-decoration:line-through;color:red}
+h1:focus{text-decoration:underline;color:#00ffaa}
+h2{vertical-align:top}
+table.aut{color:#000000;border-color:#000000;width:100%}
+table.autresdonnees{color:#000000;border-color:#000000;width:100%}
+table.client{color:#000000;border-color:#000000;width:100%}
+table.pa{color:#000000;border-color:#000000;width:100%}
+option.selected{background-color:#ffb647;color:#ff0000}
+mtable{display:table}
+mtr{display:table-row}
+mtd{display:table-cell}
+textepage{display:inline-block;width:96%;align-self:center;align-content:center;display:block;border-style:none;padding-left:2%;padding-right:2%}
+
+@media print
+{
+	.specialprint{display:none}
+}

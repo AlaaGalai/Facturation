@@ -1,0 +1,280 @@
+var hasDeleted = false;
+var allreadySubmitted = false;
+var wDlSize = 500;
+var hDlSize = 500;
+var wRdvSize = 550;
+var hRdvSize = 600;
+function doNothing()
+{
+}
+
+function copyDl(id)
+{
+	openDl(id, copy=true);
+	//loc = 'modifier_delai.php?copy=on&id=' + id;
+	//window.open(loc,'modifier','width=400,height=450,toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+//function openDl(id, copy=false, nouveau=false, date=false, personne=false)
+function openDl(id, copy, nouveau, date, personne)
+{
+	loc = 'modifier_delai.php?id=' + id;
+	if (copy) loc += '&copy=on';
+	if (nouveau)
+	{
+		loc = 'modifier_delai.php?nouveau=on&date_cours=' + date + '&dl_pour=' + personne;
+	}
+	window.open(loc,'modifier','width=' + wDlSize +',height=' + hDlSize + ',toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+function copyRdv(id, link=true)
+{
+	openRdv(id, copy=link);
+	//loc = 'modifier_rdv.php?copy=on&id=' + id;
+	//window.open(loc,'modifier','width=450,height=500,toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+//function openRdv(id, copy=false, nouveau=false, date='', heure='', personne='', type=false)
+function openRdv(id, copy, nouveau, date, heure, personne, type)
+{
+	loc = 'modifier_rdv.php?id=' + id;
+	if (copy) loc += '&copy=on';
+	if (copy > 0) loc += '&linkid=' + copy;
+	if (nouveau)
+	{
+		//if(!date) date='';
+		//if(!heure) heure='';
+		//if(!personne) personne='';
+		if(type) type = '&type=' + type;
+		else type = '';
+		loc = 'modifier_rdv.php?nouveau=on&date_cours=' + date + '&heure_debut=' + heure + '&rdv_pour=' + personne + type;
+	}
+	window.open(loc,'modifier','width=' + wRdvSize +',height=' + hRdvSize + ',toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+function newRdv(date, heure, personne, type)
+{
+	openRdv(id='', copy=false, nouveau=true, date, heure, personne, type);
+	//if(!date) date='';
+	//if(!heure) heure='';
+	//if(!personne) personne='';
+	//if(type) type = '&type=' + type;
+	//else type = '';
+	//loc = 'modifier_rdv.php?nouveau=on&date_cours=' + date + '&heure_debut=' + heure + '&rdv_pour=' + personne + type;
+	//window.open(loc,'modifier','width=450,height=500,toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+function newDl(date, personne)
+{
+	openDl(id='', copy=false, nouveau=true, date, personne);
+	//loc = 'modifier_delai.php?nouveau=on&date_cours=' + date + '&dl_pour=' + personne;
+	//window.open(loc,'modifier','width=450,height=500,toolbar=no,directories=no,menubar=no=no,location=no,status=no');
+}
+
+function reloadFrame()
+{
+/*	alert(window.opener.persReload);
+	alert(window.opener.dateReload);
+	return;*/
+// 	alert(hasDeleted);
+	var specCN = '';
+// 	var calDiv;
+// 	if(!hasDeleted) hasDeleted = false;
+	jour_debut = (document.getElementById('jour_debut')) ? document.getElementById('jour_debut').value:false;
+	jour_fin = (document.getElementById('jour_fin')) ? document.getElementById('jour_fin').value: false;
+	mois_debut = (document.getElementById('mois_debut')) ? document.getElementById('mois_debut').value:false;
+	mois_fin = (document.getElementById('mois_fin')) ? document.getElementById('mois_fin').value: false;
+	annee_debut = (document.getElementById('annee_debut')) ? document.getElementById('annee_debut').value:false;
+	annee_fin = (document.getElementById('annee_fin')) ? document.getElementById('annee_fin').value: false;
+// 	alert (jour_debut + jour_fin + mois_debut + mois_fin + annee_debut + annee_fin);
+	if(((jour_debut == jour_fin && mois_debut == mois_fin && annee_debut == annee_fin)|| (!jour_debut && !mois_debut && !annee_debut)) && !hasDeleted)
+	{
+// 	alert('ici');
+		if(!jour_debut) jour_debut = jour_fin;
+		if(!mois_debut) mois_debut = mois_fin;
+		if(!annee_debut) annee_debut = annee_fin;
+		frameId = 'framejour_' + annee_debut + '-' + mois_debut + '-' + jour_debut;
+		if(window.opener.document.getElementById(frameId))
+		{
+			calDiv = window.opener.document.getElementById(frameId);
+			calType = 'jourReload';
+			specCN = calDiv.className;
+		}
+	}
+	else if(window.opener.document.getElementById('framesemaine'))
+	{
+		calDiv = window.opener.document.getElementById('framesemaine');
+		calType = 'semaine';
+	}
+	else if(window.opener.document.getElementById('framemois'))
+	{
+		calDiv = window.opener.document.getElementById('framemois');
+		calType = 'mois';
+	}
+	if(typeof(calDiv) != "undefined")
+	{
+//	alert('ici');
+		dateCours = calType == 'jourReload'?annee_debut + '-' + mois_debut + '-' + jour_debut:window.opener.dateReload;
+		oldClass = calDiv.className;
+		calDiv.className = 'attention_bg';
+		XHR = new XHRConnection();
+		data='';
+		if(specCN) XHR.appendData('specCN', specCN);
+// 		alert(specCN);
+		XHR.appendData('agendaSolo', calType);
+		XHR.appendData('date_cours', dateCours);
+		XHR.appendData('persReload', window.opener.persReload);
+		XHR.sendAndLoad( './agenda.php', 'POST', reloadDiv);
+	}
+	else
+	{
+		window.opener.document.getElementById('self_reload').submit();
+ 		self.close();
+		//alert('là');
+	}
+//	calDiv.innerHTML = "<th><td>tutu</td></th>";
+}
+
+var reloadDiv = function (obj) 
+{ 
+// 	alert(calDiv.innerHTML);
+//  	alert('ici');
+	calDiv.innerHTML = obj.responseText;
+	calDiv.className = oldClass;
+	self.close();
+// 	calDiv.innerHTML = 'toto';
+} 
+
+// function searchAgenda()
+// {
+// 	firstForm = document.getElementById('change1');
+// 	tot='';
+// 	pers = 'personne[]';
+// 	for (el in firstForm) if (el.indexOf('pers') != -1)
+// 	{
+// 		for (elbis in firstForm[el])
+// 		{
+// 			tot += '\n' + elbis + '(' + el.indexOf('pers') + ') a pour valeur ' + firstForm[el][elbis];
+// 		}
+// 	}
+// 	alert (tot);
+// }
+
+function verifyDate(errorMessage1,errorMessage2)
+{
+	minuteDebut = (document.getElementById('minute_debut')) ? document.getElementById('minute_debut').value: '0';
+	heureDebut = (document.getElementById('heure_debut')) ? document.getElementById('heure_debut').value: '0';
+	jourDebut = document.getElementById('jour_debut').value;
+	moisDebut = document.getElementById('mois_debut').value;
+	anneeDebut = document.getElementById('annee_debut').value;
+	minuteFin = (document.getElementById('minute_fin')) ? document.getElementById('minute_fin').value: '0';
+	heureFin = (document.getElementById('heure_fin')) ? document.getElementById('heure_fin').value: '0';
+	jourFin = document.getElementById('jour_fin').value;
+	moisFin = document.getElementById('mois_fin').value;
+	anneeFin = document.getElementById('annee_fin').value;
+	jourRepet = (document.getElementById('jour_repete_fin')) ? document.getElementById('jour_repete_fin').value: '1';
+	moisRepet = (document.getElementById('mois_repete_fin')) ? document.getElementById('mois_repete_fin').value: '1';
+	anneeRepet = (document.getElementById('annee_repete_fin')) ? document.getElementById('annee_repete_fin').value: '1900';
+	
+	var repet = '';
+	if (document.getElementById('repete'))
+	{
+		selection=document.getElementById('repete').selectedIndex;
+		repet=document.getElementById('repete').options[selection].value;
+	}
+
+	moisDebut --; //les mois vont de 0 à 11 en Javascript;
+	moisFin --; //les mois vont de 0 à 11 en Javascript;
+	moisRepet --; //les mois vont de 0 à 11 en Javascript;
+	
+	var dateDebut   = new Date(anneeDebut,moisDebut,jourDebut,heureDebut,minuteDebut);
+	var dateFin     = new Date(anneeFin,moisFin,jourFin,heureFin,minuteFin);
+	var dateRepet   = new Date(anneeRepet,moisRepet,jourRepet,heureFin,minuteFin);
+	
+	timeDebut = dateDebut.getTime();
+	timeFin = dateFin.getTime();
+	timeRepet = dateRepet.getTime();
+	
+	total = ' : Du ' + jourDebut + '.' + moisDebut + '.' + anneeDebut + ' a ' + heureDebut + ':' + minuteDebut + ' au ' + jourFin + '.' + moisFin + '.' + anneeFin + ' a ' + heureFin + ':' + minuteFin + ' soit du ' + dateDebut + ' au ' + dateFin + ' ou du ' + timeDebut + ' au ' + timeFin;
+// 	alert('total' + total);
+	
+	var repetOk=false;
+	var suiteOk=false;
+	var errorMessage='';
+	
+	if(repet == '' || timeRepet > timeFin || (timeRepet <1)) repetOk=true;
+	
+	if(timeFin > timeDebut)
+	{
+		suiteOk=true;
+	}
+	
+	//Correct contentEditable docs
+	if(document.getElementById('eDiv_libelle')) document.getElementById('libelle').value = document.getElementById('eDiv_libelle').innerHTML;
+
+	if(repetOk && suiteOk)
+	{
+		//var a;
+		//for (e in document.getElementById('modifier')){a = a + ' ' + e + ':' + document.getElementById('modifier')[e];}
+		//alert(a);
+		document.getElementById('modifier').action = 'maj_op.php';
+		document.getElementById('modifier').submit();
+	}
+	
+	else
+	{
+		if(!suiteOk) errorMessage=errorMessage1;
+		if(!suiteOk && !repetOk) errorMessage += '\n';
+		if(!repetOk) errorMessage += errorMessage2;
+// 		document.getElementById('modifier').action = 'javascript:doNothing()';
+		document.getElementById('dateError').innerHTML = errorMessage;
+		document.getElementById('dateError').className = 'attention';
+// 		return false;
+	}
+	
+}
+
+function linkDate()
+{
+	if(document.getElementById('linked').checked)
+	{
+		jd = document.getElementById('jour_debut').value;
+		md = document.getElementById('mois_debut').value -1; //Attention: les mois commencent par zéro
+		ad = document.getElementById('annee_debut').value;
+		hd = document.getElementById('heure_debut').value;
+		nd = document.getElementById('minute_debut').value; //Attention: nd != md
+// 		jf = document.getElementById('jour_fin').value;
+// 		mf = document.getElementById('mois_fin').value -1;
+// 		af = document.getElementById('annee_fin').value;
+		
+// 		alert(new Date(1970, 0, 1, 0, 0).getTimezoneOffset());
+// 		jDebutInit = new Date(jDebut.replace(/-/g, '/')).getTime()/1000;
+// 		jFinInit   = new Date(jFin.replace(/-/g, '/')).getTime()/1000;
+		jDebutInit = new Date(adi, mdi, jdi, hdi, ndi).getTime()/1000// + new Date(adi, mdi, jdi, hdi, ndi).getTimezoneOffset()*60;
+		jFinInit = new Date(afi, mfi, jfi, hfi, nfi).getTime()/1000
+		nDebut = new Date(ad, md, jd, hd, nd).getTime()/1000
+// 		jFin   = new Date(af, mf, jf).getTime()/1000
+		difference = nDebut - jDebutInit;
+		nFinTS = (jFinInit + difference) * 1000;
+		nFin = new Date(nFinTS);
+// 		nFin = new Date(0);
+		jf = nFin.getDate();
+		mf = nFin.getMonth() + 1; //Attention: les mois commencent par zéro
+		af = nFin.getFullYear();
+		hf = nFin.getHours();
+		nf = nFin.getMinutes();
+		document.getElementById('jour_fin').value=jf;
+		document.getElementById('mois_fin').value=mf;
+		document.getElementById('annee_fin').value=af;
+		document.getElementById('heure_fin').value=hf;
+		document.getElementById('minute_fin').value=nf;
+// 		alert(nFin.getTimezoneOffset());
+		
+//  		alert(jDebutInit + ' = ' + jd + '.' + md + '.' + ad + ' ' + hd + ':' + nd + '\n=>\n' + nFin + ' = ' + jf + '.' + mf + '.' + af + ' ' + hf + ':' + nf);
+	}
+}
+
+function changeMonth(el, d)
+{
+	alert(d);
+}

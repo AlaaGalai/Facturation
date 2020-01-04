@@ -1,0 +1,158 @@
+.prolawyermenu{width:6.5vw;height:6.5vw}
+.menu{font-size:40px}
+.administration{font-size:40px}
+.attentionmenu{font-size:40px}
+.bordure{font-size:40px}
+.bordurefirst{font-size:40px}
+.menuinit{font-size:6.5vw;height:6.5vw}
+
+.prolawyermenu{width:6.5vw;height:6.5vw;padding:0px;margin:0px}
+.menu{font-size:6.5vw;/*padding:0px*/;margin:0px}
+.menuplaceholder{font-size:6.5vw;background-size: 6.5vw 6.5vw;background-color:#ffffff;padding:0px;margin:0px}
+.administration{font-size:6.5vw;padding:0px;margin:0px;}
+.attentionmenu{font-size:6.5vw;padding:0px;margin:0px}
+.bordure{font-size:6.5vw;height:6.5vw;height:6.5vw;padding:0px;margin:0px}
+.bordurefirst{font-size:6.5vw;height:6.5vw;background-size: 6.5vw 6.5vw;padding:0px;margin:0px}
+.menuinit{font-size:6.5vw;height:6.5vw;background-size: 6.5vw 6.5vw;padding:0px;margin:0px}
+
+.inputsize{width:40vw}
+.selstyle{
+	width:5em;
+	vertical-align:text-top;
+	overflow:hidden;
+	position:relative;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+body, td, input, button, select{font-size: 3vw}
+.agendasize, .affdl, .delaitexte, .delai_seul, .dujourtexte, .dujourvacances, .dujour, .enmoistexte, .enmoisvacances, .enmois, .horsmoistexte, .horsmoisvacances, .horsmois, .lignejour1, .lignejour2, .mailbox, .messageline, .nomjourmois, .noselect, .noselect_bold, .select, .select_bold, .semaine_select, .semaine, .semaine_entete, .today{font-size: 2vw}
+img.agendasize{width:3vw;height:3vw}
+.dateselect{font-size:3vw}
+h1{font-size:6.5vw}
+h2{font-size:3.6vw}
+h3{font-size:3.2vw}
+
+
+.menucontent {
+	position:absolute;
+	visibility:hidden;
+	width:96%;
+	max-width:96%;
+	z-index:1000;
+}
+
+.menucontent input[type='checkbox'] + span:before, .menucontent input[type='checkbox'] + form:before
+{
+	position: absolute;
+	display: block;
+	content: '\25BC';
+	font-size: 0.6em;
+/* 	color: #fff; */
+	top: 0.2em;
+	right: 1vw;
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	-moz-transition: -moz-transform 0.6s;
+	-o-transition: -o-transform 0.6s;
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+}
+.menucontent input[type='checkbox']:checked + span:before, .menucontent input[type='checkbox']:checked + form:before
+{
+	position: absolute;
+	display: block;
+	content: '\25BC';
+	font-size: 0.6em;
+/* 	color: #fff; */
+	top: 0.2em;
+	right: 1vw;
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-moz-transition: -moz-transform 0.6s;
+	-o-transition: -o-transform 0.6s;
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+}
+
+.menucontent ul{ /* définir le style des listes*/
+	list-style:none;
+	padding:0;
+}
+.menuitem ul{ /* définir le style des listes*/
+	list-style:none;
+	padding-left:0;
+}
+
+.menucontent li{ /*permet de contenir les "checkbox"*/
+	position:relative;
+	background-color:#a0a0a0;
+	-moz-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	-webkit-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+}
+
+.menuitem, .menuitem a, .menuitem form{
+	display:block;
+}
+.menuitem, .menuitem a, .menuitem form, .menuitem button, .menuitem select{
+	font-family:arial;
+	text-decoration:none;
+	background-color:#c0c0c0;
+	font-size:6.5vw;
+	color:black;
+	-moz-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	-webkit-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+}
+.submenu2, .submenu2 a, .submenu2 form, .submenu2 button, .submenu2 select{
+	font-family:arial;
+	text-decoration:none;
+	background-color:#e0e0e0;
+	font-size:6.5vw;
+	color:black;
+	-moz-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	-webkit-box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+	box-shadow: 0 1px 0 #b0b0b0 inset, 0 -1px 0 #b0b0b0 inset;
+}
+.menuitem .administration{
+	color:brown;
+}
+.menuitem form, .menuitem button{
+	width:100%;
+	max-width:100%;
+}
+.menuitem{
+	background-color:#a0a0a0;
+}
+
+.menucontent input[type="checkbox"]{
+	position:absolute;
+	display:block;
+	opacity:0;
+	top: 0;
+	width:100%;
+	max-width:100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+
+.submenu1, .submenu2, .submenu3{
+	max-height:0;
+	display:block;
+	overflow:hidden;
+	width:100%;
+	max-width:100%;
+}
+input[type="checkbox"]:checked ~ .submenu1, input[type="checkbox"]:checked ~ .submenu2{
+	max-height:999px;
+	display:block;
+	width:100%;
+	max-width:100%;
+}
